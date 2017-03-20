@@ -15,6 +15,7 @@ Two date formats are provided by default, `long` and `short`. These can be over-
 ## Examples
 
 ### Using Container
+The `DateTimeFactory` is bound as a singleton in the container, so it can be picked up and modified at any time (similar to the inbuilt View/Validation factories that Laravel provides).
 ```php
 $dateTimeFactory = app(DateTimeFactory::class);
 $dateTimeFactory->addFormat('mixed', 'Y-m-d');
@@ -27,6 +28,7 @@ echo $dateTime->format('mixed'); /* Outputs in Y-m-d */
 ```
 
 ### Using Helpers
+This package ships with two helper methods; `localize_date()` and `format_date()`.
 ```php
 $dateTimeFactory = app(DateTimeFactory::class);
 $dateTimeFactory->addFormat('mixed', 'Y-m-d');
@@ -36,4 +38,10 @@ $carbon = new \Carbon\Carbon;
 $instance = localize_date($carbon); /* Instance of DateTime */
 
 echo format_date($carbon, 'mixed'); /* Outputs in Y-m-d */
+```
+
+### Using Blade Directive
+You can format dates in the Views using the Blade Directive. All this does is proxy to the `format_date()` helper method.
+```php
+@date(new Carbon, 'long')
 ```

@@ -22,14 +22,17 @@ function localize_date(Carbon $date = null)
 /**
  * Configure a Carbon date in a Format
  * @param Carbon|null $date
- * @param string $format The pre-configured format, i.e. 'long', or any regular PHP Date Format
+ * @param string|null $format The pre-configured format, i.e. 'long', or any regular PHP Date Format.
  * @return string|null
  */
-function format_date(Carbon $date = null, $format = 'Y-m-d H:i:s')
+function format_date(Carbon $date = null, $format = null)
 {
     if ($date === null) {
         return null;
     }
+
+    /* Default to MySQL DateTime format */
+    $format = $format ? $format : "'Y-m-d H:i:s'";
 
     return localize_date($date)->format($format);
 }

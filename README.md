@@ -8,6 +8,10 @@
 3. Configure the `DateTimeFactory` with the desired Timezone and Formats. These formats can be named whatever you like, i.e. `long` or `short`.
 4. Use the `FormatsDates` trait or the helpers defined in `helpers.php` to localize/output the dates.
 
+## Defaults
+
+Two date formats are provided by default, `long` and `short`. These can be over-ridden at any time.
+
 ## Examples
 
 ### Using Container

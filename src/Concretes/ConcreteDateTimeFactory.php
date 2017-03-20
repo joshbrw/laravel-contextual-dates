@@ -3,6 +3,7 @@
 namespace Joshbrw\LaravelContextualDates\Concretes;
 
 use Carbon\Carbon;
+use InvalidArgumentException;
 use Joshbrw\LaravelContextualDates\Contracts\DateTimeFactory;
 use Joshbrw\LaravelContextualDates\DateTime;
 

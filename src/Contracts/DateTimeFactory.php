@@ -31,6 +31,13 @@ interface DateTimeFactory
     public function addFormat($name, $format);
 
     /**
+     * Get all of the registered formats, in format:
+     *      name => format
+     * @return array
+     */
+    public function getFormats();
+
+    /**
      * Create a DateTime instance from a Carbon instance
      * @param Carbon $date
      * @return DateTime

@@ -10,10 +10,7 @@ class DateTime extends Carbon
     /**
      * @var string[]
      */
-    private $formats = [
-        'long' => 'd-m-Y H:i:s',
-        'short' => 'd-m-Y'
-    ];
+    private $formats = [];
 
     /**
      * Add a custom format

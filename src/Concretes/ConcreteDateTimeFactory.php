@@ -16,7 +16,10 @@ class ConcreteDateTimeFactory implements DateTimeFactory
     /**
      * @var array
      */
-    protected $formats = [];
+    protected $formats = [
+        'long' => 'd-m-Y H:i:s',
+        'short' => 'd-m-Y'
+    ];
 
     /**
      * Set the Timezone
@@ -65,6 +68,16 @@ class ConcreteDateTimeFactory implements DateTimeFactory
         $this->formats[$name] = $format;
 
         return $this;
+    }
+
+    /**
+     * Get all of the registered formats, in format:
+     *      name => format
+     * @return array
+     */
+    public function getFormats()
+    {
+        return $this->formats;
     }
 
     /**

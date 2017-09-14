@@ -32,7 +32,7 @@ function format_date(Carbon $date = null, $format = null)
     }
 
     /* Default to MySQL DateTime format */
-    $format = $format ? $format : "'Y-m-d H:i:s'";
+    $format = $format ? $format : "Y-m-d H:i:s";
 
     return localize_date($date)->format($format);
 }
